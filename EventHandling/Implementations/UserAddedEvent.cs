@@ -11,8 +11,8 @@ namespace EventHandling.Implementations
         public User EventData { get; set; }
     }
 
-    public class UserAddedEventWithResult : IEvent<User,UserAddedResult>
+    public class UserAddedEventWithResult : ICommand<User,UserAddedResult>
     {
-        public User EventData { get; set; }
+        public User CommandData { get; set; }
     }
 }

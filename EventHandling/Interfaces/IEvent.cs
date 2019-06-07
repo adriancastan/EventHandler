@@ -9,9 +9,9 @@ namespace EventHandling.Interfaces
         T EventData { get; set; }
     }
 
-    public interface IEvent<T, U>
+    public interface ICommand<T, U>
     {
-        T EventData { get; set; }
+        T CommandData { get; set; }
     }
 
 

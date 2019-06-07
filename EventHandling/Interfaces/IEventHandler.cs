@@ -6,7 +6,7 @@ namespace EventHandling.Interfaces
 {
     public interface IEventHandler<TEventData,UResponse>: IEventHandler
     {
-        UResponse Handle(IEvent<TEventData,UResponse> @event);
+        UResponse Handle(ICommand<TEventData,UResponse> @event);
     }
 
     public interface IEventHandler<TEventData> : IEventHandler

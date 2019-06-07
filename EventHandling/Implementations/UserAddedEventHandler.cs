@@ -10,7 +10,7 @@ namespace EventHandling.Implementations
     public class UserAddedEventHandler : IEventHandler<User,UserAddedResult>
     {       
 
-        public UserAddedResult Handle(IEvent<User,UserAddedResult> @event)
+        public UserAddedResult Handle(ICommand<User,UserAddedResult> @event)
         {
             return new UserAddedResult() { UserName = "Juanito Perez" };
         }

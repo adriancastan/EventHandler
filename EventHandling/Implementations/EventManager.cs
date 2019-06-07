@@ -30,7 +30,7 @@ namespace EventHandling.Implementations
         }
         
 
-        public IEnumerable<U> HandleEvent<T, U>(IEvent<T, U> @event)
+        public IEnumerable<U> HandleCommand<T, U>(ICommand<T, U> @event)
         {
             var handlers = eventHandlers.Where(o => o is IEventHandler<T, U> handler);
 

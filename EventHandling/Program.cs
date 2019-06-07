@@ -17,7 +17,7 @@ namespace EventHandling
             evMan.AddHandler(evWithResult);
             evMan.AddHandler(evNoResult);
 
-            var results= evMan.HandleEvent(new UserAddedEventWithResult() { EventData = new Models.User() { Name = "Julian" } });
+            var results= evMan.HandleCommand(new UserAddedEventWithResult() { CommandData = new Models.User() { Name = "Julian" } });
 
 
             foreach (var resul in results)
