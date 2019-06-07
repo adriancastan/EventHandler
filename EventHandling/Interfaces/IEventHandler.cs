@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace EventHandling.Interfaces
+﻿namespace EventHandling.Interfaces
 {
     public interface IEventHandler<TEventData,UResponse>: IEventHandler
     {
