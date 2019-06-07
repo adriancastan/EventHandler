@@ -10,4 +10,9 @@ namespace EventHandling.Implementations
     {
         public User EventData { get; set; }
     }
+
+    public class UserAddedEventWithResult : IEvent<User,UserAddedResult>
+    {
+        public User EventData { get; set; }
+    }
 }

@@ -7,11 +7,12 @@ using System.Text;
 
 namespace EventHandling.Implementations
 {
-    public class UserAddedEventHandler : IEventHandler<User>
-    {
-        public void Handle(IEvent<User> @event)
+    public class UserAddedEventHandler : IEventHandler<User,UserAddedResult>
+    {       
+
+        public UserAddedResult Handle(IEvent<User,UserAddedResult> @event)
         {
-            Debug.WriteLine(@event.EventData.Name);
+            return new UserAddedResult() { UserName = "Juanito Perez" };
         }
     }
 }

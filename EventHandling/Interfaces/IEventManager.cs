@@ -8,5 +8,6 @@ namespace EventHandling.Interfaces
     {
         void AddHandler(IEventHandler eventHandler);
         void HandleEvent<T>(IEvent<T> @event);
+        IEnumerable<U> HandleEvent<T, U>(IEvent<T,U> @event);
     }
 }

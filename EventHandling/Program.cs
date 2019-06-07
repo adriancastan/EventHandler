@@ -1,5 +1,6 @@
 ﻿using EventHandling.Implementations;
 using EventHandling.Interfaces;
+using EventHandling.Models;
 using System;
 
 namespace EventHandling
@@ -10,10 +11,23 @@ namespace EventHandling
         {
             IEventManager evMan = new EventManager();
 
-            evMan.AddHandler(new UserAddedEventHandler());
-            evMan.AddHandler(new UserAddedEventHandler2());
+            IEventHandler<User, UserAddedResult> evWithResult = new UserAddedEventHandler();
+            IEventHandler<User> evNoResult = new UserAddedEventHandler2();
 
-            evMan.HandleEvent(new UserAddedEvent() { EventData= new Models.User() { Name="Julian" } });
+            evMan.AddHandler(evWithResult);
+            evMan.AddHandler(evNoResult);
+
+            var results= evMan.HandleEvent(new UserAddedEventWithResult() { EventData = new Models.User() { Name = "Julian" } });
+
+
+            foreach (var resul in results)
+            {
+                Console.WriteLine(resul.UserName);
+            }
+
+            evMan.HandleEvent(new UserAddedEvent() { EventData = new Models.User() { Name = "Julian" } });
+
+
         }
     }
 }

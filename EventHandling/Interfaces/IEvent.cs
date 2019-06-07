@@ -8,4 +8,11 @@ namespace EventHandling.Interfaces
     {
         T EventData { get; set; }
     }
+
+    public interface IEvent<T, U>
+    {
+        T EventData { get; set; }
+    }
+
+
 }
