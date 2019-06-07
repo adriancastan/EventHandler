@@ -11,7 +11,7 @@ namespace EventHandling
         {
             IEventManager evMan = new EventManager();
 
-            IEventHandler<User, UserAddedResult> evWithResult = new UserAddedEventHandler();
+            ICommandHandler<User, UserAddedResult> evWithResult = new UserAddedEventHandler();
             IEventHandler<User> evNoResult = new UserAddedEventHandler2();
 
             evMan.AddHandler(evWithResult);

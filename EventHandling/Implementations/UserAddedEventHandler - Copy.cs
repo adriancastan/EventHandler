@@ -1,12 +1,8 @@
-﻿using EventHandling.Interfaces;
-using EventHandling.Models;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Text;
-
-namespace EventHandling.Implementations
+﻿namespace EventHandling.Implementations
 {
+    using EventHandling.Interfaces;
+    using EventHandling.Models;
+    using System.Diagnostics;
     public class UserAddedEventHandler2 : IEventHandler<User>
     {
         public void Handle(IEvent<User> @event)

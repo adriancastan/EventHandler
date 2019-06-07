@@ -1,16 +1,11 @@
 ﻿namespace EventHandling.Interfaces
 {
-    public interface IEventHandler<TEventData,UResponse>: IEventHandler
-    {
-        UResponse Handle(ICommand<TEventData,UResponse> @event);
-    }
-
-    public interface IEventHandler<TEventData> : IEventHandler
+    public interface IEventHandler<TEventData> : IHandler
     {
         void Handle(IEvent<TEventData> @event);
-    }
+    }    
 
-    public interface IEventHandler
+    public interface IHandler
     {
 
     }

@@ -7,7 +7,7 @@ using System.Text;
 
 namespace EventHandling.Implementations
 {
-    public class UserAddedEventHandler : IEventHandler<User,UserAddedResult>
+    public class UserAddedEventHandler : ICommandHandler<User,UserAddedResult>
     {       
 
         public UserAddedResult Handle(ICommand<User,UserAddedResult> @event)

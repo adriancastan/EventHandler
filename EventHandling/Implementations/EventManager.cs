@@ -6,13 +6,13 @@ namespace EventHandling.Implementations
 {
     public class EventManager : IEventManager
     {
-        private IList<IEventHandler> eventHandlers;
+        private IList<IHandler> eventHandlers;
 
         public EventManager()
         {
-            eventHandlers = new List<IEventHandler>();
+            eventHandlers = new List<IHandler>();
         }
-        public void AddHandler(IEventHandler eventHandler)
+        public void AddHandler(IHandler eventHandler)
         {
             eventHandlers.Add(eventHandler);
         }
@@ -30,11 +30,11 @@ namespace EventHandling.Implementations
 
         public IEnumerable<U> HandleCommand<T, U>(ICommand<T, U> @event)
         {
-            var handlers = eventHandlers.Where(o => o is IEventHandler<T, U> handler);
+            var handlers = eventHandlers.Where(o => o is ICommandHandler<T, U> handler);
 
             var results = new List<U>();
 
-            foreach (IEventHandler<T, U> handler in handlers)
+            foreach (ICommandHandler<T, U> handler in handlers)
             {
                 results.Add(handler.Handle(@event));
             }
